@@ -2,10 +2,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-#request = requests.get("https://www.bu.edu/academics/cas/courses/computer-science/")
-#print(request.content)
-#soup = BeautifulSoup(html_doc, 'html.parser')
-
 def getPage(url):
     request = requests.get(url)
     if request.status_code != 200:
@@ -40,7 +36,7 @@ def getUrlsHandler(maxLimit=4): #you can change max limit depending on # of cour
     return (True, links_array)
 
 def getCourseContent(url):
-    #courseContent= {}
+    courseContent = {}
     data = getPage(url)
     if (data[0] == False):
         return (False, [])
@@ -48,32 +44,57 @@ def getCourseContent(url):
         soup = BeautifulSoup(data[1], 'html.parser')
         h1_elements = soup.find_all('h1')
         course_name = h1_elements[1].text.strip()
+        courseContent['courseName'] = course_name
+
         course_code = soup.h2.text
+        courseContent['courseCode'] = course_code
+
         course_content_div = soup.find('div', id="course-content")
         course_description = course_content_div.find('p').text
+        courseContent['courseDiscription'] = course_description
+
         info_box_div = soup.find('div', id="info-box")
         dd_elements = info_box_div.find_all('dd')
         if len(dd_elements) == 1:
             credit = dd_elements[0].text.strip() 
             prereqs = "None"
+            courseContent['credit'] = credit
+            courseContent['prereqs'] = prereqs
         else:
             credit = dd_elements[0].text.strip() 
             prereqs = dd_elements[1].text.strip()
-            return prereqs
-        #return course_name
+            courseContent['credit'] = credit
+            courseContent['prereqs'] = prereqs
 
-# def getCourseContentHandler(urls):
+        offerings_ul = soup.find('ul', class_="cf-hub-offerings")
+        if offerings_ul:  
+            hubs = [li.text.strip() for li in offerings_ul.find_all('li')]
+            num = 1
+            for hub in hubs:
+                courseContent['hub' + str(num)] = hub
+                num += 1
+        else:
+            hubs = "None"
+            courseContent['hub'] = hubs
+        return courseContent
+
+def getCourseContentHandler(urls):
+    if urls[0] == False:
+        return (False, [])
+    else:
+        course_links = urls[1]
+        all_courses_info = []
+        for link in course_links:
+            base_url = "https://www.bu.edu/"
+            all_courses_info.append(getCourseContent(base_url + link))
+        return (True, all_courses_info)
     
 
 #print(getPage("https://www.bu.edu/academics/cas/courses/computer-science/"))
-print(getCourseContent("https://www.bu.edu/academics/cas/courses/cas-cs-132/")) 
-#print(getUrlsHandler())
+#print(getCourseContent("https://www.bu.edu/academics/cas/courses/cas-cs-112/")) 
+print(getCourseContentHandler(getUrlsHandler()))
 
 #To Do:
-
-#Get pre-reqs if any
-
-#Get Hubs if any
 
 #put into csv or similar file
 
