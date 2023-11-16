@@ -1,4 +1,3 @@
-#https://jasper-vulture-314.notion.site/74953ef432014f029743f97f884025ed?v=ec683d332f304a4e873461d48cd79997
 import requests
 from bs4 import BeautifulSoup
 
@@ -9,7 +8,7 @@ def getPage(url):
     return (True, request.content)
 
 def getUrls(limit=1):
-    base_url = "https://www.bu.edu/academics/cas/courses/computer-science/" + str(limit) #you can change base url depending on major
+    base_url = "https://www.bu.edu/academics/cas/courses/computer-science/" + str(limit) 
     data = getPage(base_url)
 
     if (data[0] == False):
@@ -40,7 +39,7 @@ def dynamicMaxLimit():
                 break
     return (True, max_limit)
 
-def getUrlsHandler(max_limit=1): #you can change max limit depending on # of courses pages 
+def getUrlsHandler(max_limit=1): 
     limit = 1
     links_array = []
     while limit <= max_limit:
@@ -66,29 +65,30 @@ def getCourseContent(url):
         course_name = h1_elements[1].text.strip()
         courseContent['courseName'] = course_name
 
+        offerings_ul = soup.find('ul', class_="cf-hub-offerings")
+        if offerings_ul:  
+            bu_hubs = [li.text.strip() for li in offerings_ul.find_all('li')]
+            hubs = ""
+            for hub in bu_hubs:
+                hubs += " " +hub
+            courseContent['hub(s)'] = hubs
+        else:
+            hubs = "None"
+            courseContent['hub(s)'] = hubs
+
         info_box_div = soup.find('div', id="info-box")
         dd_elements = info_box_div.find_all('dd')
         if len(dd_elements) == 1:
             credit = dd_elements[0].text.strip() 
             prereqs = "None"
-            courseContent['credit'] = credit
             courseContent['prereqs'] = prereqs
+            courseContent['credit'] = credit
         else:
             credit = dd_elements[0].text.strip() 
             prereqs = dd_elements[1].text.strip()
-            courseContent['credit'] = credit
             courseContent['prereqs'] = prereqs
+            courseContent['credit'] = credit
 
-        offerings_ul = soup.find('ul', class_="cf-hub-offerings")
-        if offerings_ul:  
-            hubs = [li.text.strip() for li in offerings_ul.find_all('li')]
-            num = 1
-            for hub in hubs:
-                courseContent['hub' + str(num)] = hub
-                num += 1
-        else:
-            hubs = "None"
-            courseContent['hub'] = hubs
         return (True, courseContent)
 
 def getCourseContentHandler(urls):
@@ -103,12 +103,5 @@ def getCourseContentHandler(urls):
             if course_info[0] == False:
                 return (False, [])
             else:
-                all_courses_info.append(course_info[1])
-        return (True, all_courses_info[0])
-    
-print(getCourseContentHandler(getUrlsHandler(dynamicMaxLimit()[1]))[1])
-
-#--------------------------------------------------------------------------------------
-
-#Potential to expand into university wide scrapper
-#https://www.bu.edu/academics/schools-colleges/     link to access each school and through them the course offerings
+               all_courses_info.append(course_info[1])
+        return (True, all_courses_info)
