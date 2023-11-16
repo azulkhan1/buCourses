@@ -23,10 +23,27 @@ def getUrls(limit=1):
         else:
             return (False, [])
 
-def getUrlsHandler(maxLimit=4): #you can change max limit depending on # of courses pages 
+def dynamicMaxLimit():
+    max_limit = 1
+    while True: 
+        base_url = "https://www.bu.edu/academics/cas/courses/computer-science/" + str(max_limit)
+        data = getPage(base_url)
+        if (data[0] == False):
+            return (False, [])
+        else:
+            soup = BeautifulSoup(data[1], 'html.parser')
+            course_feed = soup.find('ul', class_="course-feed") 
+            if course_feed and course_feed.find_all('li'):
+                max_limit += 1
+            else:
+                max_limit -= 1
+                break
+    return (True, max_limit)
+
+def getUrlsHandler(max_limit=1): #you can change max limit depending on # of courses pages 
     limit = 1
     links_array = []
-    while limit <= maxLimit:
+    while limit <= max_limit:
         if (getUrls(limit) == (False, [])):
             return (False, [])
         else:
@@ -34,6 +51,8 @@ def getUrlsHandler(maxLimit=4): #you can change max limit depending on # of cour
             links_array += data[1]
         limit += 1
     return (True, links_array)
+
+print(getUrlsHandler(dynamicMaxLimit()[1]))
 
 def getCourseContent(url):
     courseContent = {}
@@ -96,7 +115,7 @@ def getCourseContentHandler(urls):
 
 #print(getPage("https://www.bu.edu/academics/cas/courses/computer-science/"))
 #print(getCourseContent("https://www.bu.edu/academics/cas/courses/cas-cs-112/")) 
-print(getCourseContentHandler(getUrlsHandler())[1])
+#print(getCourseContentHandler(getUrlsHandler())[1])
 
 #To Do:
 
