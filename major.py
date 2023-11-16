@@ -52,8 +52,6 @@ def getUrlsHandler(max_limit=1): #you can change max limit depending on # of cou
         limit += 1
     return (True, links_array)
 
-print(getUrlsHandler(dynamicMaxLimit()[1]))
-
 def getCourseContent(url):
     courseContent = {}
     data = getPage(url)
@@ -61,16 +59,12 @@ def getCourseContent(url):
         return (False, [])
     else:
         soup = BeautifulSoup(data[1], 'html.parser')
-        h1_elements = soup.find_all('h1')
-        course_name = h1_elements[1].text.strip()
-        courseContent['courseName'] = course_name
-
         course_code = soup.h2.text
         courseContent['courseCode'] = course_code
 
-        course_content_div = soup.find('div', id="course-content")
-        course_description = course_content_div.find('p').text
-        courseContent['courseDiscription'] = course_description
+        h1_elements = soup.find_all('h1')
+        course_name = h1_elements[1].text.strip()
+        courseContent['courseName'] = course_name
 
         info_box_div = soup.find('div', id="info-box")
         dd_elements = info_box_div.find_all('dd')
@@ -112,16 +106,7 @@ def getCourseContentHandler(urls):
                 all_courses_info.append(course_info[1])
         return (True, all_courses_info[0])
     
-
-#print(getPage("https://www.bu.edu/academics/cas/courses/computer-science/"))
-#print(getCourseContent("https://www.bu.edu/academics/cas/courses/cas-cs-112/")) 
-#print(getCourseContentHandler(getUrlsHandler())[1])
-
-#To Do:
-
-#put into csv or similar file
-
-#Write script to put it into notion
+print(getCourseContentHandler(getUrlsHandler(dynamicMaxLimit()[1]))[1])
 
 #--------------------------------------------------------------------------------------
 
