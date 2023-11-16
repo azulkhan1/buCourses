@@ -76,7 +76,7 @@ def getCourseContent(url):
         else:
             hubs = "None"
             courseContent['hub'] = hubs
-        return courseContent
+        return (True, courseContent)
 
 def getCourseContentHandler(urls):
     if urls[0] == False:
@@ -86,13 +86,17 @@ def getCourseContentHandler(urls):
         all_courses_info = []
         for link in course_links:
             base_url = "https://www.bu.edu/"
-            all_courses_info.append(getCourseContent(base_url + link))
-        return (True, all_courses_info)
+            course_info = getCourseContent(base_url + link)
+            if course_info[0] == False:
+                return (False, [])
+            else:
+                all_courses_info.append(course_info[1])
+        return (True, all_courses_info[0])
     
 
 #print(getPage("https://www.bu.edu/academics/cas/courses/computer-science/"))
 #print(getCourseContent("https://www.bu.edu/academics/cas/courses/cas-cs-112/")) 
-print(getCourseContentHandler(getUrlsHandler()))
+print(getCourseContentHandler(getUrlsHandler())[1])
 
 #To Do:
 
