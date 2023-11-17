@@ -7,16 +7,15 @@ time of the website is. Also the way the information about courses is organized
 is all over the place. This project is being made to remedy this issue and hopefully
 help students get a better way of looking up courses to take during upcoming semesters
 
-Goals of the project:
-
-- To provide a more user friendly experience for Students looking to take courses in their upcoming semesters
-- all courses for a given major can be viewed in a single webpage
-- all data is completely organized using notion databases
+This project was the 1st project of 3 total projects that build on top of eachother
+to reach the desired end goal
 
 Tasks:
 
-- get all the major/course data using python
-- put all the data into a csv
-- use the csv file and transfer the data into a notion database using the notion API
+- get all the major/course data using python (COMPLETED)
+- put all the data into a csv (COMPLETED)
 
-#https://jasper-vulture-314.notion.site/74953ef432014f029743f97f884025ed?v=ec683d332f304a4e873461d48cd79997
+The goals for this project were to get all the course data for a particular major
+in this case Computer Science and put all of the data into a csv file.
+
+The results of the project can be viewed in the majorCourses.csv File
