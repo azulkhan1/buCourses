@@ -1,0 +1,63 @@
+courseCode,courseName,hub(s),prereqs,credit
+CAS CS 101,Introduction to Computing, Quantitative Reasoning II Digital/Multimedia Expression Critical Thinking,None,4
+CAS CS 103,Introduction to Internet Technologies and Web Programming, Quantitative Reasoning II Digital/Multimedia Expression Creativity/Innovation,None,4
+CAS CS 105,Introduction to Databases and Data Mining, Quantitative Reasoning II Critical Thinking Creativity/Innovation,None,4
+CAS CS 108,Programming for Non-CS Majors, Quantitative Reasoning I,None,4
+CAS CS 111,Introduction to Computer Science 1, Quantitative Reasoning II Critical Thinking Creativity/Innovation,None,4
+CAS CS 112,Introduction to Computer Science 2, Quantitative Reasoning II Critical Thinking Creativity/Innovation,CAS CS 111; or equivalent.,4
+CAS CS 115,Academic Writing in Computer Science, Writing-Intensive Course,CAS WR 120 or equivalent; CAS CS 111.,2
+CAS CS 131,Combinatoric Structures, Quantitative Reasoning II Critical Thinking,None,4
+CAS CS 132,Geometric Algorithms, Quantitative Reasoning II Digital/Multimedia Expression,CAS CS 111 and CAS MA 123.,4
+CAS CS 200,Computer Science Workshops,None,None,1
+CAS CS 210,Computer Systems, Quantitative Reasoning II,CAS CS 112.,4
+CAS CS 235,Algebraic Algorithms, Quantitative Reasoning II,CASCS132 recommended.,4
+CAS CS 237,Probability in Computing, Quantitative Reasoning II Critical Thinking,CAS CS 131.,4
+CAS CS 320,Concepts of Programming Languages, Creativity/Innovation,CAS CS 131 and CAS CS 210.,4
+CAS CS 330,Introduction to Analysis of Algorithms, Quantitative Reasoning II Critical Thinking,"CASCS112, CASCS131, and CASCS132; or CASCS235 or CASCS237",4
+CAS CS 332,Elements of the Theory of Computation,None,CAS CS 330.,4
+CAS CS 350,Fundamentals of Computing Systems,None,CAS CS 210.,4
+CAS CS 357,Introduction to Information Security,None,CAS CS 210; or consent of instructor.,4
+CAS CS 365,Foundations of Data Science,None,CAS CS112 and CAS CS131 and CAS CS132 and CAS CS237 (or equivalent). Or consent of instructor. Recommended: CAS CS330.,4
+CAS CS 400,Topics in Computer Science,None,None,4
+CAS CS 401,Senior Independent Work, Research and Information Literacy,approval of the Honors Committee.,4
+CAS CS 402,Senior Independent Work, Oral and/or Signed Communication,approval of the Honors Committee.,4
+CAS CS 410,Advanced Software Systems,None,CAS CS 210.,4
+CAS CS 411,Software Engineering, Teamwork/Collaboration,CAS CS 112.,4
+CAS CS 412,Full-Stack Application Design and Development,None,CAS CS 111 ; CAS CS 112 ; CAS CS 411; or consent of instructor.,4
+CAS CS 440,Introduction to Artificial Intelligence,None,CAS CS 112 and CAS CS 132.,4
+CAS CS 451,Distributed Systems,None,CAS CS 210.,4
+CAS CS 454,Embedded Systems Development,None,CAS CS 210.,4
+CAS CS 455,Computer Networks,None,CAS CS 210.,4
+CAS CS 460,Introduction to Database Systems,None,CAS CS 112.,4
+CAS CS 480,Introduction to Computer Graphics, Digital/Multimedia Expression,CAS CS 112 and CAS CS 132.,4
+CAS CS 491,Directed Study,None,"sophomore or higher standing, consent of instructor, and a completed Directed Study Application form.",Var
+CAS CS 492,Directed Study,None,"sophomore or higher standing, consent of instructor, and a completed Directed Study Application form.",Var
+CAS CS 501,Computer Science Practicum,None,None,4
+CAS CS 505,Introduction to Natural Language Processing,None,CAS CS 365.,4
+CAS CS 506,Data Science Tools and Applications, Research and Information Literacy Teamwork/Collaboration,CAS CS 108 or CAS CS 111; CAS CS 132 or CAS MA 242 or CAS MA 442. CASCS 112 is recommended.,4
+CAS CS 511,Formal Methods 1,None,CAS CS 320 or CAS CS 330 or CAS CS 350.,4
+CAS CS 516,Software Foundations via Formal Languages,None,CAS CS 320 and CAS CS 330; or equivalent courses approved by the instructor.,4
+CAS CS 518,Formal Tools for Software Validation,None,"Bachelor's degree in computer science OR Bachelor's degree in computer engineering OR consent of instructor, AND working familiarity with at least one modern programming language.",4
+CAS CS 519,Spark! Software Engineering X-Lab Practicum, Ethical Reasoning Oral and/or Signed Communication Teamwork/Collaboration,CAS CS 411 or CDS DS 310; or equiv. experience in software development and consent of instructor.,4
+CAS CS 523,Deep Learning,None,CAS CS 542.,4
+CAS CS 525,Compiler Design Theory,None,"CAS CS 320; , or consent of instructor.",4
+CAS CS 528,Cloud Computing,None,"CAS CS 350 and CAS CS 460; or consent of instructor. CASCS455, CASCS552, and CASCS562 are recommended.",4
+CAS CS 530,Advanced Algorithms,None,CAS CS 330; or consent of instructor.,4
+CAS CS 531,Advanced Optimization Algorithms,None,"CAS MA 123 & 124, or equivalent and CAS CS 132 or equivalent; or consent of instructor.",4
+CAS CS 535,Complexity Theory,None,CAS CS 332; or consent of instructor.,4
+CAS CS 537,Randomness in Computing,None,CAS CS 330 or CAS CS 530; . CASCS535 is recommended or consent of instructor.,4
+CAS CS 538,Fundamentals of Cryptography,None,CAS CS 131 ; CAS CS 237 ; CAS CS 357; or consent of instructor.,4
+CAS CS 541,Applied Machine Learning,None,CS111 (CS112 recommended); CS132 or MA242 (or EK103); CS237 or MA581 (or EK381.) CS365 is recommended.,4
+CAS CS 542,Principles of Machine Learning,None,CAS CS 365.,4
+CAS CS 543,Algorithmic Techniques for Taming Big Data, Quantitative Reasoning II Creativity/Innovation,exposure to basic data structures and algorithms or consent of instructor.,4
+CAS CS 548,Advanced Cryptography,None,CAS CS 538; or consent of instructor.,4
+CAS CS 549,Spark! Machine Learning X-Lab Practicum,None,CAS CS 505 or CAS CS 542 or CAS CS 585; or consent of instructor. Consent provided upon successful completionof pass/fail diagnostic test that will assess student readiness to take the course.,4
+CAS CS 551,Streaming and Event-driven Systems,None,CAS CS 112 and CAS CS 210; CAS CS 451 and CAS CS 460 or consent of instructor.,4
+CAS CS 558,Computer Networks Security,None,CAS CS 357; or consent of instructor.,4
+CAS CS 561,Data Systems Architectures, Oral and/or Signed Communication Research and Information Literacy,CAS CS 210 or equivalent and CAS CS 460/660.,4
+CAS CS 565,Algorithmic Data Mining,None,CAS CS 112 ; CAS CS 330 ; CAS CS 365.,4
+CAS CS 581,Computational Fabrication,None,CAS CS 112 and CAS CS 132 or CAS MA 242; CAS 480/GRS CS 680 recommended.,4
+CAS CS 582,Geometry Processing,None,"CAS CS 112 (or equivalent), CAS CS 132 or CAS MA 242 (or equivalent),CAS MA 225 (or equivalent).",4
+CAS CS 583,Audio Computation, Scientific Inquiry II Creativity/Innovation,CAS CS 112; and understanding of physics equivalent to CAS PY 105.,4
+CAS CS 585,Image and Video Computing,None,CAS CS 132 or CAS MA 242; and CASCS112 or equivalent programming experience and familiarity with calculus.,4
+CAS CS 599,Advanced Topics in Computer Science,None,None,4
