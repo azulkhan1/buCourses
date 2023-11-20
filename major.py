@@ -70,7 +70,7 @@ def getCourseContent(url):
             bu_hubs = [li.text.strip() for li in offerings_ul.find_all('li')]
             hubs = ""
             for hub in bu_hubs:
-                hubs += " " +hub
+                hubs += "\n" +hub
             courseContent['hub(s)'] = hubs
         else:
             hubs = "None"
