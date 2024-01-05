@@ -1,21 +1,27 @@
-# buCourses
+# BU Courses
 
-buCourses is a side project that I am currently working on to replace BU's
-course search website that is highly outdated and only lets you look at a certain
-amount of courses per web page. I am personally frustrated by how slow the load
-time of the website is. Also the way the information about courses is organized
-is all over the place. This project is being made to remedy this issue and hopefully
-help students get a better way of looking up courses to take during upcoming semesters
+BU Courses is a Python-based project aimed at streamlining the course search experience for Boston University students. The primary goal is to gather major/course data from BU and organize it into a user-friendly CSV format. This project serves as a part of a larger initiative, Terrier Search, which seeks to enhance the way students discover and select courses for upcoming semesters.
 
-This project was the 1st project of 3 total projects that build on top of eachother
-to reach the desired end goal
+# Features 
 
-Tasks:
+Data Scraping: Utilizes Python scripts to scrape course data from Boston University's course listings.
 
-- get all the major/course data using python (COMPLETED)
-- put all the data into a csv (COMPLETED)
+Data Organization: Efficiently organizes and consolidates course information into a single CSV file for easy access and reference.
 
-The goals for this project were to get all the course data for a particular major
-in this case Computer Science and put all of the data into a csv file.
+Student-Centric Design: Focuses on creating a user-friendly format that simplifies the course selection process for students.
 
-The results of the project can be viewed in the majorCourses.csv File
+# Motivation
+
+Frustrated by the slow load times and outdated interface of BU's course search website, and the scattered organization of course information, this project is my initiative to address these challenges. It's designed to provide a more efficient and cohesive course search experience for my fellow students.
+
+# Setup and Usage
+
+Clone the Repository: Clone the project to your local machine.
+
+Run the Python Script: Execute the script to scrape and organize BU course data.
+
+Access the Data: The compiled course data will be available in a CSV file for easy viewing and analysis.
+
+# Sample results
+
+A sample result of the project can be viewed in the majorCourses.csv File
